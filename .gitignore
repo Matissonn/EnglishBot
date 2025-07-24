@@ -3,13 +3,14 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+.env
+tasks.json
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
-src/resources/.env
-src/resources/tasks.json
 *.iws
 *.iml
 *.ipr
