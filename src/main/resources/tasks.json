@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "type": "select",
+    "text": "U2 and the Rolling Stones are among the bands that  (А1) ... worldwide tours in recent years.",
+    "options": [
+      "have had",
+      "are having",
+      "had had",
+      "will have",
+      "are had"
+    ],
+    "explanation": ""
+  },
+
+  {
+    "id": 2,
+    "type": "typeIn",
+    "text": "We had to make a difficult ... (DECIDE) about the future of our fashion brand.",
+    "options": [
+      "DECISION"
+    ],
+    "explanation": ""
+  }
+]
