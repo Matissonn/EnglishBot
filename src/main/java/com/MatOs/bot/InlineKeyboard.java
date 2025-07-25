@@ -22,19 +22,7 @@ public class InlineKeyboard {
 
         for(int i = 0; i < ops.size(); i++) {
             List<InlineKeyboardButton> row = new ArrayList<>();
-            InlineKeyboardButton button = new InlineKeyboardButton();
-            if(Objects.equals(ops.get(i), TelegramBot.task.getOptions().getFirst()) && Objects.equals(callback, TelegramBot.task.getOptions().getFirst())){
-                button.setText("✅" + ops.get(i));
-                button.setCallbackData(ops.get(i));
-            }else if(Objects.equals(ops.get(i), callback) && !Objects.equals(callback, TelegramBot.task.getOptions().getFirst())){
-                button.setText("❌" + ops.get(i));
-                button.setCallbackData(ops.get(i));
-            }else if(Objects.equals(callback, "/")){
-                button.setCallbackData("/");
-            }else if(Objects.equals(callback, "")){
-                button.setText(ops.get(i));
-                button.setCallbackData(ops.get(i));
-            }
+            InlineKeyboardButton button = setInlineKeyboardButton(ops, callback, i);
 
             row.add(button);
 
@@ -42,5 +30,22 @@ public class InlineKeyboard {
         }
 
         inlineKeyboardMarkup.setKeyboard(keyboard);
+    }
+
+    private static InlineKeyboardButton setInlineKeyboardButton(ArrayList<String> ops, String callback, int i) {
+        InlineKeyboardButton button = new InlineKeyboardButton();
+        if(Objects.equals(ops.get(i), TelegramBot.task.getOptions().getFirst()) && Objects.equals(callback, TelegramBot.task.getOptions().getFirst())){
+            button.setText("✅" + ops.get(i));
+            button.setCallbackData(ops.get(i));
+        }else if(Objects.equals(ops.get(i), callback) && !Objects.equals(callback, TelegramBot.task.getOptions().getFirst())){
+            button.setText("❌" + ops.get(i));
+            button.setCallbackData(ops.get(i));
+        }else if(Objects.equals(callback, "/")){
+            button.setCallbackData("/");
+        }else if(Objects.equals(callback, "")){
+            button.setText(ops.get(i));
+            button.setCallbackData(ops.get(i));
+        }
+        return button;
     }
 }
